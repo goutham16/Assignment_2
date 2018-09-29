@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace Assignment_2
 {
@@ -228,15 +229,33 @@ namespace Assignment_2
     //return type  : NA
     public void SortByValue()
     {
-      // write your implementation here
+            // write your implementation here
 
-    }
+            //Stock.Sort((x, y) => x.Holdings.CompareTo(y.Holdings));
 
-    //param        : NA
-    //summary      : Sort the list alphabatically
-    //return       : NA
-    //return type  : NA
-    public void SortByName()
+            //Stock.Sort(delegate (Holdings x, Holdings y)
+            //{
+            //    return x.Total.CompareTo(y.Total);
+            //});
+
+            //Stock.Sort((f1, f2) => f1.Holdings.CompareTo(f2.Holdings));
+            //List<Stock> SortedList = Stock.OrderBy(o => o.OrderDate).ToList();
+
+            IEnumerable<ClientPortfolio> sortedClientPortfolio = StockList.OrderBy(StockList => StockList.Holdings);
+
+            List<decimal> ClientPortfolioHoldingsOrderBy = ClientPortfolio
+                                                                .Select(s => s.Holdings)
+                                                                .OrderBy(s => s)
+                                                                .ToList();
+
+
+        }
+
+        //param        : NA
+        //summary      : Sort the list alphabatically
+        //return       : NA
+        //return type  : NA
+        public void SortByName()
     {
       // write your implementation here
 
