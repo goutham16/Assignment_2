@@ -229,11 +229,24 @@ namespace Assignment_2
     //return type  : NA
     public void SortByValue()
     {
-       // write your implementation here
-       List<Stock> stockListsSorted = client1.StockList
-                                         .OrderByDescending(s => s.Holding)
-                                         .ToList();
+            // write your implementation here          
 
+            List<StockList> stockListsSorted1 = new List<StockList>
+            {
+                this
+            };
+      
+            List <StockList> stockListsSorted2 = stockListsSorted1
+                               .OrderByDescending(s => s.head.StockHolding.Holdings)
+                               .ToList();
+
+            StockList[] array = stockListsSorted1.OrderByDescending(s => s.head).ToArray();
+
+          //  stockListsSorted2 = stockListsSorted2.OrderBy(s =>.head)
+
+          //var  List <stock> = stockListsSorted2.OrderBy(StockList => StockList.head).ToArray();
+
+          //  this.head = stockListsSorted;
 
     }
 

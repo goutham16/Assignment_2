@@ -33,5 +33,5 @@ namespace Assignment_2
       return Symbol + ", " + Name + ", " + Holdings + ", " + CurrentPrice;
     }
 
-    }
+  }
 }
