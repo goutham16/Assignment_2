@@ -231,24 +231,21 @@ namespace Assignment_2
     {
             // write your implementation here
 
-            //Stock.Sort((x, y) => x.Holdings.CompareTo(y.Holdings));
+            List<StockList> sortedStockList = new List<StockList>();
 
-            //Stock.Sort(delegate (Holdings x, Holdings y)
-            //{
-            //    return x.Total.CompareTo(y.Total);
-            //});
+            sortedStockList = sortedStockList.OrderBy(w => w.head.StockHolding).ToList();
+    
+           // var orderByResult = sortedStockList.OrderBy(s => s.head.StockHolding);
+            
+            var orderByResult = from s in sortedStockList
+                                orderby s.head.StockHolding
+                                select s;
 
-            //Stock.Sort((f1, f2) => f1.Holdings.CompareTo(f2.Holdings));
-            //List<Stock> SortedList = Stock.OrderBy(o => o.OrderDate).ToList();
-
-            IEnumerable<ClientPortfolio> sortedClientPortfolio = StockList.OrderBy(StockList => StockList.Holdings);
-
-            List<decimal> ClientPortfolioHoldingsOrderBy = ClientPortfolio
-                                                                .Select(s => s.Holdings)
-                                                                .OrderBy(s => s)
-                                                                .ToList();
-
-
+            foreach (var stock in sortedStockList)
+            {
+                Console.WriteLine(head.StockHolding);
+            }
+            
         }
 
         //param        : NA
