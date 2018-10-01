@@ -13,8 +13,16 @@ namespace Assignment_2
     public StockList MergeList(StockList listToMerge)
     {
       StockList resultList = new StockList();
-
-      // write your implementation here
+      
+      StockNode current = this.head;
+      StockNode previous = this.head;
+      while (current != null)
+            {
+                Stock currentStock = current.StockHolding;
+                resultList.AddStock(currentStock);
+                previous = current;
+                current = current.Next;
+            }
 
       return resultList;
     }
@@ -26,8 +34,20 @@ namespace Assignment_2
     public Stock MostShares()
     {
       Stock mostShareStock = null;
-
-      // write your implementation here
+      
+      StockNode current = this.head;
+      StockNode previous = this.head;
+      Stock currentStock = current.StockHolding;
+      mostShareStock = currentStock;
+      while (current != null)
+            {
+                if (currentStock.Holdings > mostShareStock.Holdings)
+                    {
+                        mostShareStock = currentStock;
+                    }
+                previous = current;
+                current = current.Next;
+            }
 
       return mostShareStock;
     }
@@ -39,8 +59,13 @@ namespace Assignment_2
     public int Length()
     {
       int length = 0;
-
-      // write your implementation here
+      
+      var current = this.head;
+      while(current != null)
+            {
+                length++;
+                current = current.Next;
+            }
 
       return length;
     }
