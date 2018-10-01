@@ -220,35 +220,34 @@ namespace Assignment_2
       return currNodeTwo;
     }
 
-    
-    // FOR STUDENTS
 
-    //param        : NA
-    //summary      : Sort the list by descending number of holdings
-    //return       : NA
-    //return type  : NA
-    public void SortByValue()
-    {
+        // FOR STUDENTS
+
+        //param        : NA
+        //summary      : Sort the list by descending number of holdings
+        //return       : NA
+        //return type  : NA
+        public void SortByValue()
+        {
             // write your implementation here          
 
-            List<StockList> stockListsSorted1 = new List<StockList>
+            List<StockList> stockListsSorted2 = new List<StockList>();
+            stockListsSorted2.Add(this);
+
+            List<StockList> sortedList =  stockListsSorted2.OrderByDescending(s => s.head.StockHolding.Holdings).ToList();
+
+            //StockList[] arrayTest1 = stockListsSorted1.OrderByDescending(s => s.head).ToArray();
+
+            //  stockListsSorted2 = stockListsSorted2.OrderBy(s =>.head)
+
+            //var  List <stock> = stockListsSorted2.OrderBy(StockList => StockList.head).ToArray();
+            foreach (Stock
             {
-                this
+
             };
-      
-            List <StockList> stockListsSorted2 = stockListsSorted1
-                               .OrderByDescending(s => s.head.StockHolding.Holdings)
-                               .ToList();
+        
 
-            StockList[] array = stockListsSorted1.OrderByDescending(s => s.head).ToArray();
-
-          //  stockListsSorted2 = stockListsSorted2.OrderBy(s =>.head)
-
-          //var  List <stock> = stockListsSorted2.OrderBy(StockList => StockList.head).ToArray();
-
-          //  this.head = stockListsSorted;
-
-    }
+        }
 
         //param        : NA
         //summary      : Sort the list alphabatically
