@@ -231,20 +231,21 @@ namespace Assignment_2
         {
             // write your implementation here          
 
-            List<StockList> stockListsSorted2 = new List<StockList>();
-            stockListsSorted2.Add(this);
+            List<StockList> stockListsSorted1 = new List<StockList>();
+            stockListsSorted1.Add(this);
 
-            List<StockList> sortedList =  stockListsSorted2.OrderByDescending(s => s.head.StockHolding.Holdings).ToList();
+            List<StockList> sortedList =  stockListsSorted1.OrderByDescending(s => s.head.StockHolding.Holdings).ToList();
 
-            //StockList[] arrayTest1 = stockListsSorted1.OrderByDescending(s => s.head).ToArray();
+            sortedList = sortedList.OrderByDescending(s => s.head.StockHolding).ToList();
 
-            //  stockListsSorted2 = stockListsSorted2.OrderBy(s =>.head)
+            //Testing to see if using a locally declared list would help resolve
+            var stockListsSorted2 = stockListsSorted1.OrderBy(s => s.head).ToList();
 
-            //var  List <stock> = stockListsSorted2.OrderBy(StockList => StockList.head).ToArray();
-            foreach (Stock
-            {
+            // Testing to see if sorting an array would work better
+            StockList[] arrayTest1 = stockListsSorted1.OrderByDescending(s => s.head).ToArray();
 
-            };
+           
+
         
 
         }
