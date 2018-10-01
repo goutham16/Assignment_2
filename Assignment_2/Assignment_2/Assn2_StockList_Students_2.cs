@@ -14,9 +14,19 @@ namespace Assignment_2
     {
       StockList resultList = new StockList();
 
-      // write your implementation here
+            // write your implementation here
 
-      return resultList;
+            StockNode current = this.head;
+            StockNode previous = this.head;
+            while (current != null)
+            {
+                Stock currentStock = current.StockHolding;
+                resultList.AddStock(currentStock);
+                previous = current;
+                current = current.Next;
+            }
+
+            return resultList;
     }
 
     //param        : NA
@@ -27,9 +37,24 @@ namespace Assignment_2
     {
       Stock mostShareStock = null;
 
-      // write your implementation here
+            // write your implementation here
 
-      return mostShareStock;
+            StockNode current = this.head;
+            StockNode previous = this.head;
+            Stock currentStock = current.StockHolding;
+            mostShareStock = currentStock;
+            while (current != null)
+            {
+                if (currentStock.Holdings > mostShareStock.Holdings)
+                {
+                    mostShareStock = currentStock;
+                }
+                previous = current;
+                current = current.Next;
+            }
+
+
+            return mostShareStock;
     }
 
     //param        : NA
@@ -40,9 +65,24 @@ namespace Assignment_2
     {
       int length = 0;
 
-      // write your implementation here
+            // write your implementation here
 
-      return length;
+
+            StockNode current = this.head;
+            StockNode previous = this.head;
+            Stock currentStock = current.StockHolding;
+            mostShareStock = currentStock;
+            while (current != null)
+            {
+                if (currentStock.Holdings > mostShareStock.Holdings)
+                {
+                    mostShareStock = currentStock;
+                }
+                previous = current;
+                current = current.Next;
+            }
+
+            return length;
     }
   }
 }
